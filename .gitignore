@@ -1,0 +1,14 @@
+.vs/
+*.VC.db
+*.VC.opendb
+*/Configs/*/*
+*/extensions/*/*.cpp
+*/extensions/*/*.dll
+*/extensions/*/*.pdb
+*/#backups/
+*/Debug/
+*/Release/
+Debug/
+Release/
+*.sdf
+help.rtf
