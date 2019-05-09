@@ -26,8 +26,8 @@ Except you can't get them because the global scope isn't populated with built-in
 However, as an accident revealed, the way the built-in functions are expected to be set into scope,
 is that the scope needs variables defined with names but no values - not just `undefined`, but the
 special kind of value that resides in variables that were never assigned (`kind==VALUE_UNSET` on YYGML.h terms).
-And you can't just get such a value by passing an nonexistent variable to a function (which would give you a read error)
-- the value must come from a GML function call.
+And you can't just get such a value by passing an nonexistent variable to a function (which would give you a read error) -
+the value must come from a GML function call.
 
 This is where `variable_global_get` comes into play - due to a bug that hadn't been fixed until GMS2.2,
 if a nonexistent variable is being read via the function, it would return the exact thing that we need.
@@ -37,7 +37,7 @@ while keeping it amiss, which allows the subsequent call to create a closure and
 
 Then, on C side we can grab the actual function pointer from the closure, call (or store) it accordingly, and voila!
 
-We can then add a bit of caching and a C++ wrappers to make it all nicer.
+We can then add a bit of caching and a couple C++ wrappers to make it all nicer.
 
 ## Limitations
 * You cannot get a pointer to `script_execute` specifically because it got optimized and is no longer a function as such
