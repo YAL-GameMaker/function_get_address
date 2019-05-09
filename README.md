@@ -1,8 +1,8 @@
 # function_get_address
 Supported versions:
 
-* GameMaker: Studio > 1773 (object value type wasn't supported before then)
-* GameMaker Studio 2 < 2.2 (a bug got fixed after 2.2.1.291)
+* GameMaker: Studio: all versions released after 1.4.1773 (object value type wasn't supported before then)
+* GameMaker Studio 2: all versions before 2.2.2 (2.2.1.291 is the last one where this works)
 
 ## What is this
 This trick allows to acquire a pointer to a native GML function, as result allowing you to pass it to a native extension
@@ -29,7 +29,7 @@ special kind of value that resides in variables that were never assigned (`kind=
 And you can't just get such a value by passing an nonexistent variable to a function (which would give you a read error) -
 the value must come from a GML function call.
 
-This is where `variable_global_get` comes into play - due to a bug that hadn't been fixed until GMS2.2,
+This is where `variable_global_get` comes into play - due to a bug that hadn't been fixed until GMS2.2.2,
 if a nonexistent variable is being read via the function, it would return the exact thing that we need.
 
 And thus, `variable_global_set(name, variable_global_get(name));` will generate an index for a global variable
