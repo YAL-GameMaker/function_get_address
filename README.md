@@ -4,6 +4,8 @@ Supported versions:
 * GameMaker: Studio: all versions released after 1.4.1773 (object value type wasn't supported before then)
 * GameMaker Studio 2: all versions before 2.2.2 (2.2.1.291 is the last one where this works)
 
+For GMS2.3 and GM2022+, check out the [2024 edition](https://github.com/YAL-GameMaker/function_get_address_2024).
+
 ## What is this
 This trick allows to acquire a pointer to a native GML function, as result allowing you to pass it to a native extension
 and have the later call it - for example, your extensions now can suddenly make buffers, or data structures, or even call
